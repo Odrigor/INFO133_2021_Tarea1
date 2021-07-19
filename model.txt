@@ -1,0 +1,22 @@
+se propone como modelo tener 2 tipos de colecciones de archivos bson
+1 enfocada a los datos del usario y otra enfocada a los datos el archivo de sonido subido
+además a esto, para guardar los archivos de audio con mongo, usarmeos gridfs-stream, que no
+nos ayuda a procesar el archivo en distintos chunks, que pueden ser guardados en formatos bson
+
+user =  ({
+    rut: String,
+    name: String,
+    apellido: String
+  });
+
+ meta = ({
+    userRut: String,
+    upload: { type: Date, default: Date.now },
+    apellido: String,
+    duration: { type: Number, min: 0, max: 60 },
+    soundSource: String,
+    category: String,
+    posx:String,
+    posy:String,
+    isInsideSound: Boolean
+  });
